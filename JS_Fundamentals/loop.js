@@ -51,27 +51,38 @@ const cars = ['Ford', 'Chevy', 'Honda', 'Toyota'];
 // })
 
 // MAP
-const users = [
-  {
-    id: 1, 
-    name: 'John'
-  },
-  {
-    id: 2, 
-    name: 'Sara'
-  },
-  {
-    id: 3, 
-    name: 'James'
-  },
-  {
-    id: 4, 
-    name: 'Patrick'
-  }
-];
+// const users = [
+//   {
+//     id: 1, 
+//     name: 'John'
+//   },
+//   {
+//     id: 2, 
+//     name: 'Sara'
+//   },
+//   {
+//     id: 3, 
+//     name: 'James'
+//   },
+//   {
+//     id: 4, 
+//     name: 'Patrick'
+//   }
+// ];
 
-const ids = users.map(function(user) {
-  return user.name;
-});
+// const ids = users.map(function(user) {
+//   return user.name;
+// });
 
-console.log(ids);
+// console.log(ids);
+
+// FOR IN LOOP
+const user = {
+  firstName: 'John',
+  lastName: 'Doe',
+  age: 36
+};
+
+for(let x in user) {
+  console.log(`${x} : ${user[x]}`); // ${x} - gets the property | ${user[x]} - gets the value of the property
+}
