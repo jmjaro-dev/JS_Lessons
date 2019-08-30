@@ -24,9 +24,54 @@
 
 
 // DO WHILE LOOP
-let i = 0;
+// let i = 0;
 
-do {
-  console.log('Number: ' + i);
-  i++;
-} while(i <  10)
+// do {
+//   console.log('Number: ' + i);
+//   i++;
+// } while(i <  10)
+
+// LOOP THROUGH AN ARRAY
+const cars = ['Ford', 'Chevy', 'Honda', 'Toyota'];
+
+// for(let i = 0; i < cars.length; i++) {
+//   console.log(cars[i]);
+// }
+// FOREACH
+
+// cars.forEach(function(car, index, array) {
+//   console.log(`${index} : ${car}`);
+//   console.log(array);
+//   // console.log(array[index]); // Individual value
+// })
+
+// cars.forEach((car, index, array) => {
+//   console.log(`${index} : ${car}`);
+//   console.log(array);
+// })
+
+// MAP
+const users = [
+  {
+    id: 1, 
+    name: 'John'
+  },
+  {
+    id: 2, 
+    name: 'Sara'
+  },
+  {
+    id: 3, 
+    name: 'James'
+  },
+  {
+    id: 4, 
+    name: 'Patrick'
+  }
+];
+
+const ids = users.map(function(user) {
+  return user.name;
+});
+
+console.log(ids);
