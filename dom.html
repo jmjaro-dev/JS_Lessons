@@ -12,7 +12,7 @@
   <!-- Font Awesome CDN -->
   <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 </head>
-<body class="grey lighten-2">
+<body>
   <div class="container">
     <div class="row">
       <div class="col s12">
@@ -25,6 +25,13 @@
                   <input type="text" name="task" id="task" value="Walk the dog">
                   <label for="">New Task</label>
                 </div>
+                <div class="input-field col s12">
+                  <select>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                  </select>
+                </div>
                 <button type="submit" class="btn white-text cyan waves-light waves-effect">Add Task</button>
               </form>
             </div>
@@ -34,36 +41,36 @@
             <ul class="collection">
               <li class="collection-item">
                 List Item 1
-                <a href="" class="delete-item secondary-content">
+                <a href="#" class="delete-item secondary-content">
                   <i class="fa fa-remove"></i>
                 </a>
               </li>
               <li class="collection-item">
                 List Item 2
-                <a href="" class="delete-item secondary-content">
+                <a href="#" class="delete-item secondary-content">
                   <i class="fa fa-remove"></i>
                 </a>
               </li>
               <li class="collection-item">
                 List Item 3
-                <a href="" class="delete-item secondary-content">
+                <a href="#" class="delete-item secondary-content">
                   <i class="fa fa-remove"></i>
                 </a>
               </li>
               <li class="collection-item">
                 List Item 4
-                <a href="" class="delete-item secondary-content">
+                <a href="#" class="delete-item secondary-content">
                   <i class="fa fa-remove"></i>
                 </a>
               </li>
               <li class="collection-item">
                 List Item 5
-                <a href="" class="delete-item secondary-content">
+                <a href="#" class="delete-item secondary-content">
                   <i class="fa fa-remove"></i>
                 </a>
               </li>
             </ul>
-            <a href="" class="clear-tasks btn black">Clear Tasks</a>
+            <a href="#!" class="clear-tasks btn green darken-4 waves-effect waves-light">Clear Tasks</a>
           </div>
         </div>
       </div>
@@ -77,6 +84,12 @@
   <!-- Compiled and minified JavaScript -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <!-- Custom JS -->
-  <script src="/DOM_Manipulation/create_element.js"></script>
+  <script src="/DOM_Manipulation/keypress_events.js"></script>
+
+  <script>
+    $(document).ready(function(){
+      $('select').formSelect();
+    });
+  </script>
 </body>
 </html>
