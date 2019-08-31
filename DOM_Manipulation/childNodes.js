@@ -34,10 +34,33 @@ val = list.children[1];
 list.children[1].textContent = 'Hello';
 
 // Children of children
-list.children[3].children[0].id = 'test-link';
+list.children[3].children[0].id = 'test-link';    // sets the id of the 1st child of the 4th child of list(ul)
+val = list.children[3].children[0];               // gets the 1st child of the 4th child of list[ul] 
+val = list.children[3].children[0].children[0];
 
 // First child
-// val = list.firstChild;
+val = list.firstChild;          
+val = list.firstElementChild;
+
+// Last child
+val = list.lastChild;
+val = list.lastElementChild;
+
+// Count child element
+val = list.childElementCount;
+
+// Get Parent Node
+val = listItem.parentNode;
+val = listItem.parentElement;
+val = listItem.parentElement.parentElement;
+
+// Get next sibling
+val = listItem.nextSibling;
+val = listItem.nextElementSibling.nextElementSibling;
+
+// Get previous sibling
+val = listItem.previousSibling;
+val = listItem.previousElementSibling;
 
 
 console.log(val);
