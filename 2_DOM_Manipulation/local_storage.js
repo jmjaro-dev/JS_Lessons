@@ -31,7 +31,7 @@ document.querySelector('form').addEventListener('submit', function(e){
 
   alert('Task saved');
   // logs all the task in the console
-  tasks.forEach(function(task){
+  tasks.forEach(function(){
     console.log(task);
   });
 });
