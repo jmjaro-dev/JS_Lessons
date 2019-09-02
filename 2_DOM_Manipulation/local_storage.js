@@ -21,7 +21,7 @@ document.querySelector('form').addEventListener('submit', function(e){
   if(localStorage.getItem('tasks') === null) {
     tasks = [];
   } else {
-    // Converts JSON String to an Object
+    // Converts JSON String to an Array
     tasks = JSON.parse(localStorage.getItem('tasks'));
   }
   // adds a new task to the end of tasks array

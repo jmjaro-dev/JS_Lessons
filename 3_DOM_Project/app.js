@@ -8,8 +8,11 @@ const taskInput = document.querySelector('#task');        // refers to the input
 // Load All Event Listeners
 loadEventListeners();
 
+
 // Load All Event Listerners Function Declaration
 function loadEventListeners() {
+  // DOM Load Event
+  document.addEventListener('DOMContentLoaded', getTasks);
   // Add Task event
   form.addEventListener('submit', addTask);
   // Remove Task event
@@ -18,6 +21,38 @@ function loadEventListeners() {
   clearBtn.addEventListener('click', clearTasks);
   // Filter Task event
   filter.addEventListener('keyup', filterTasks);
+}
+
+// Get Tasks from LocalStorage
+function getTasks(){
+  let tasks;
+
+  if(localStorage.getItem('tasks') === null) {
+    tasks = [];
+  } else {
+    // Converts JSON String to an Object/Array
+    tasks = JSON.parse(localStorage.getItem('tasks'));
+  }
+  tasks.forEach(function(task) {
+    // Create an element
+    const li = document.createElement('li');
+    // Add Class
+    li.className = 'collection-item';
+    // Create text node and append to li
+    li.appendChild(document.createTextNode(task));
+    // Create a new link element
+    const link = document.createElement('a');
+    // Set href attribute of link
+    link.setAttribute('href', '#!');
+    // Add Class to link
+    link.className = 'delete-item secondary-content';
+    // Add Icon
+    link.innerHTML = '<i class="fa fa-remove"></i>';
+    // Append the link to li
+    li.appendChild(link);
+    // Append li to ul
+    taskList.appendChild(li);
+  }); 
 }
 
 // addTask function declaration
@@ -45,10 +80,30 @@ function addTask(e) {
     li.appendChild(link);
     // Append li to ul
     taskList.appendChild(li);
+
+    storeTaskInLocalStorage(taskInput.value);
     // Clears the task input field
     taskInput.value = '';
     // console.log(taskList);
+    
   }
+}
+
+// storeTaskInLocalStorage function Declaration
+function storeTaskInLocalStorage(task) {
+  let tasks;
+
+  if(localStorage.getItem('tasks') === null) {
+    tasks = [];
+  } else {
+    // Converts JSON String to an Array
+    tasks = JSON.parse(localStorage.getItem('tasks'));
+  }
+  // adds a new task to the end of tasks array
+  tasks.push(task);
+  // adds an item to 'tasks' in local storage by converting the 'tasks' object to JSON String
+  localStorage.setItem('tasks', JSON.stringify(tasks));
+  alert('Task saved');
 }
 
 // removeTask function declaration
@@ -57,8 +112,31 @@ function removeTask(e) {
     if(confirm('Are you sure?')) {
       // removes the parent LI
       e.target.parentElement.parentElement.remove();
+
+      // remove item from local storage
+      removeTaskFromLocalStorage(e.target.parentElement.parentElement);
     }
   }
+}
+
+function removeTaskFromLocalStorage(taskItem) {
+  let tasks;
+  if(localStorage.getItem('tasks') === null) {
+    tasks = [];
+  } else {
+    // Converts JSON String to an Array
+    tasks = JSON.parse(localStorage.getItem('tasks'));
+  }
+  // Loop through the task items
+  tasks.forEach(function(task, index){
+    // Compare if the li textContent matches the 'task'
+    if(taskItem.textContent === task) {
+      // Removes the value from the array
+      tasks.splice(index, 1);
+    }
+  });
+  // sets the local storage again
+  localStorage.setItem('tasks', JSON.stringify(tasks));
 }
 
 // clearTask function declaration
@@ -66,10 +144,12 @@ function clearTasks() {
   // // 1st way of clearing tasks
   // taskList.innerHTML = '';
 
-  // 2nd way of clearting taks
+  // 2nd way of clearting tasks
   while(taskList.firstChild) {
     taskList.removeChild(taskList.firstChild);
   }
+  // removes all tasks in the Local Storage
+  localStorage.removeItem('tasks');
 }
 
 // filterTasks function declaration
