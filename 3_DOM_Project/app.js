@@ -33,6 +33,7 @@ function getTasks(){
     // Converts JSON String to an Object/Array
     tasks = JSON.parse(localStorage.getItem('tasks'));
   }
+  // Generate all the Task Items from the Local Storage
   tasks.forEach(function(task) {
     // Create an element
     const li = document.createElement('li');
@@ -127,15 +128,15 @@ function removeTaskFromLocalStorage(taskItem) {
     // Converts JSON String to an Array
     tasks = JSON.parse(localStorage.getItem('tasks'));
   }
-  // Loop through the task items
+  // Loop through all the task items
   tasks.forEach(function(task, index){
-    // Compare if the li textContent matches the 'task'
+    // Compare if the li textContent matches the 'task' Array
     if(taskItem.textContent === task) {
       // Removes the value from the array
       tasks.splice(index, 1);
     }
   });
-  // sets the local storage again
+  // update the tasks value in local storage 
   localStorage.setItem('tasks', JSON.stringify(tasks));
 }
 
