@@ -10,38 +10,24 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <!-- Font Awesome CDN -->
   <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-  <title>Task List</title>
+  <title>Guessing Game</title>
 </head>
 <body>
   <div class="container">
-    <div class="row">
-      <div class="col s12">
-        <div id="main" class="card">
-          <div class="card-content">
-            <span class="card-title">Task List</span>
-            <div class="row">
-              <form id="task-form">
-                <div class="input-field col s12">
-                  <input type="text" id="task">
-                  <label for="task">New Task</label>
-                </div>
-                <input type="submit" class="btn" value="Add Task">
-              </form>
-            </div>
-          </div>
-          <div class="card-action">
-            <h5 id="task-title">Tasks</h5>
-            <div class="input-field col s12">
-              <input type="text" id="filter">
-              <label for="filter">Filter Tasks</label>
-            </div>
-            <ul class="collection"></ul>
-            <a href="#!" class="clear-tasks btn cyan">Clear Tasks</a>
-          </div>
-        </div>
-      </div>
+    <h1>Number Guesser</h1>
+    <div id="game" class="card-panel">
+      <p>
+        Guess a number between 
+        <span class="min-num">1</span> and <span class="max-num">10</span>
+      </p>
+      <input type="number" id="guess-input" placeholder="Enter your guess">
+      <input type="submit" class="btn" id="guess-btn">
+      <p class="message"></p>
+      <!-- <h5>Life: <span class="life"></span></h5>
+      <input type="button" value="Play Again" style="display: none;" class="btn" id="playAgain"> -->
     </div>
   </div>
+
 
   <!-- JQuery CDN -->
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"
@@ -50,7 +36,7 @@
   <!-- Compiled and minified JavaScript -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <!-- CUSTOM JS -->
-  <script src="3_DOM_Project/app.js"></script>
+  <script src="3_DOM_Projects/2_game.js"></script>
   <!-- JQuery Materialize INIT -->
   <script>
     $(document).ready(function(){
