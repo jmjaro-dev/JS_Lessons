@@ -67,23 +67,28 @@ export class Store {
   // static getBooks() method
   static getBooks() {
     let books;
+    // check if 'books' in Local Storage is empty 
     if(localStorage.getItem('books') === null) {
+      // Set an empty array of books
       books = [];
     } else {
+      // Convert the 'books' JSON string to array
       books = JSON.parse(localStorage.getItem('books'));
     }
-    
+    // returns the books as an array
     return books;
   }
 
   // static displayBooks() method
   static displayBooks() {
+    // Get the books array from Local Storage
     const books = Store.getBooks();
 
+    // Iterate through the books array
     books.forEach(function(book) {
       // Instantiate UI
       const ui = new UI();
-      // Add Book to  UI
+      // Add Book to UI
       ui.addBookToList(book);
     });
   }
@@ -100,15 +105,18 @@ export class Store {
   
   // static removeBook() method
   static removeBook(isbn) {
+    // Get the books array from Local Storage
     const books = Store.getBooks();
 
+    // Iterate through the books array
     books.forEach(function(book, index) {
+      // Compare if 'isbn' of the current book/item matched the 'isbn' in the parameter
       if(book.isbn === isbn) {
-        console.log('deleted');
+        // removes the book/item in books array 
         books.splice(index, 1);
       }
     });
-
+    // Returns the updated value of the books array to Local Storage
     localStorage.setItem('books', JSON.stringify(books));
   }
 }
