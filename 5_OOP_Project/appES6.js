@@ -1,57 +1,5 @@
 // ES6 Conversion
-import { Book, UI } from './modelES6.js';
-
-// Local Storage Class
-class Store {
-  // static getBooks() method
-  static getBooks() {
-    let books;
-    if(localStorage.getItem('books') === null) {
-      books = [];
-    } else {
-      books = JSON.parse(localStorage.getItem('books'));
-    }
-    
-    return books;
-  }
-
-  // static displayBooks() method
-  static displayBooks() {
-    const books = Store.getBooks();
-
-    books.forEach(function(book) {
-      // Instantiate UI
-      const ui = new UI();
-      // Add Book to  UI
-      ui.addBookToList(book);
-    });
-  }
-
-  // static addBook() method
-  static addBook(book) {
-    // Set books to an array of books from local storage
-    const books = Store.getBooks();
-    // Push/Add book to books array
-    books.push(book);
-    // Add book to Local Storage
-    localStorage.setItem('books', JSON.stringify(books));
-  }
-  
-  // static removeBook() method
-  static removeBook(isbn) {
-    const books = Store.getBooks();
-
-    books.forEach(function(book, index) {
-      if(book.isbn === isbn) {
-        console.log('deleted');
-        books.splice(index, 1);
-      }
-    });
-
-    localStorage.setItem('books', JSON.stringify(books));
-  }
-}
-
+import { Book, UI, Store } from './modelES6.js';
 
 // EVENT LISTENERS
 
