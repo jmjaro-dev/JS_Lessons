@@ -46,20 +46,18 @@ const posts = [
 ];
 
 
-function createPost(post, callback) {
-  setTimeout(function() {
+const createPost = (post, callback) => {
+  setTimeout(() => {
     posts.push(post);
     callback();
   }, 2000);
 }
   
-function getPosts() {
-  setTimeout(function() {
+const getPosts = () => {
+  setTimeout(() => {
     let output = '';
     
-    posts.forEach(function(post) {
-      output += `<li>${post.title}</li> <li>${post.body}</li>`;
-    });
+    posts.forEach(post => output += `<li>${post.title}</li> <li>${post.body}</li>`);
     document.body.innerHTML = output;
   },1000);
 }

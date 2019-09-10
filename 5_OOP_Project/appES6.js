@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', Store.displayBooks);
 
 
 // Submit Event
-document.querySelector('#book-form').addEventListener('submit', function(e) {
+document.querySelector('#book-form').addEventListener('submit', e => {
   // prevent default
   e.preventDefault();
 
@@ -43,7 +43,9 @@ document.querySelector('#book-form').addEventListener('submit', function(e) {
 });
 
 // Delete Book event listener
-document.querySelector('#book-list').addEventListener('click', function(e) {
+document.querySelector('#book-list').addEventListener('click', e => {
+  // prevent default
+  e.preventDefault();
   // Instantiate UI
   const ui = new UI();
 
@@ -55,7 +57,4 @@ document.querySelector('#book-list').addEventListener('click', function(e) {
 
   // Show success
   ui.showAlert('Book Removed', 'success');
-  
-
-  e.preventDefault();
 });

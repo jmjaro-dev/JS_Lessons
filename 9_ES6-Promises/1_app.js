@@ -11,9 +11,9 @@ const posts = [
   }
 ];
 
-function createPost(post) {
-  return new Promise(function(resolve, reject) {
-    setTimeout(function() {
+const createPost = post => {
+  return new Promise((resolve, reject) => {
+    setTimeout(_ => {
       posts.push(post);
 
       const error = false;
@@ -27,11 +27,11 @@ function createPost(post) {
   });
 }
   
-function getPosts() {
-  setTimeout(function() {
+const getPosts = _ => {
+  setTimeout(() => {
     let output = '<ul class="collection">';
     
-    posts.forEach(function(post) {
+    posts.forEach(post => {
       output += `<li class="collection-item">${post.title}</li> <li class="collection-item">${post.body}</li>`;
     });
     document.querySelector('#posts').innerHTML = `${output} </ul>`;
@@ -40,6 +40,4 @@ function getPosts() {
 
 createPost({title: 'Post Three', body: 'This is post Three'})
   .then(getPosts)
-  .catch(function(err) {
-    console.log(err);
-  });
+  .catch(err => console.log(err));

@@ -1,9 +1,5 @@
-document.querySelector('#button1').addEventListener('click', loadCustomer);
-document.querySelector('#button2').addEventListener('click', loadCustomers);
-
 // Load Single Customer
-function loadCustomer(e) {
-  e.preventDefault();
+const loadCustomer = e => {
 
   // Instantiates an XMLHttpRequest Object to xhr
   const xhr = new XMLHttpRequest();
@@ -34,9 +30,11 @@ function loadCustomer(e) {
   }
   // Sends the XMLHttpRequest
   xhr.send();
+
+  
 }
 
-function loadCustomers(e) {
+const loadCustomers = e =>{
   e.preventDefault();
 
   // Instantiates an XMLHttpRequest Object to xhr
@@ -54,7 +52,7 @@ function loadCustomers(e) {
       let output = '';
 
       // Iterates through the customers array of objects and creates a template string for each customer
-      customers.forEach(function(customer) {
+      customers.forEach(customer => {
         output += `
           <div class="collection">
             <div class="collection-item blue lighten-4" ><b>ID</b>: ${customer.id}</div>
@@ -72,3 +70,8 @@ function loadCustomers(e) {
 
   xhr.send();
 }
+
+
+// Event Listeners
+document.querySelector('#button1').addEventListener('click', loadCustomer);
+document.querySelector('#button2').addEventListener('click', loadCustomers);

@@ -42,9 +42,7 @@ export class UI {
     // Insert Alert
     container.insertBefore(div, form);
 
-    setTimeout(function() {
-      document.querySelector('.alert').remove();
-    }, 3000);
+    setTimeout(() => document.querySelector('.alert').remove(), 3000);
   }
 
   // Delete Book
@@ -85,7 +83,7 @@ export class Store {
     const books = Store.getBooks();
 
     // Iterate through the books array
-    books.forEach(function(book) {
+    books.forEach(book => {
       // Instantiate UI
       const ui = new UI();
       // Add Book to UI
@@ -109,7 +107,7 @@ export class Store {
     const books = Store.getBooks();
 
     // Iterate through the books array
-    books.forEach(function(book, index) {
+    books.forEach((book, index) => {
       // Compare if 'isbn' of the current book/item matched the 'isbn' in the parameter
       if(book.isbn === isbn) {
         // removes the book/item in books array 

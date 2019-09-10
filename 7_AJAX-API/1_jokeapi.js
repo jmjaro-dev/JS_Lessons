@@ -1,6 +1,4 @@
-document.querySelector('.get-jokes').addEventListener('click', getJokes);
-
-function getJokes(e) {
+const getJokes = e => {
   e.preventDefault();
 
   const number = document.querySelector('input[type="number"]').value;
@@ -54,3 +52,5 @@ function getJokes(e) {
 
   xhr.send();
 }
+
+document.querySelector('.get-jokes').addEventListener('click', getJokes);
