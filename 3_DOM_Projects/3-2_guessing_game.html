@@ -10,16 +10,23 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <!-- Font Awesome CDN -->
   <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-  
-  <title>HTTP Library Example</title>
+  <title>Guessing Game</title>
 </head>
 <body>
   <div class="container">
-      <h1>HTTP Library Example</h1>
-      <p>Custom HTTP Library - AJAX with callbacks</p>
-
-      <input type="number" id="input">
+    <h1>Number Guesser</h1>
+    <div id="game" class="card-panel">
+      <p>
+        Guess a number between 
+        <span class="min-num">1</span> and <span class="max-num">10</span>
+      </p>
+      <input type="number" id="guess-input" placeholder="Enter your guess">
+      <input type="submit" class="btn" id="guess-btn">
+      <p class="message"></p>
+    </div>
   </div>
+
+
   <!-- JQuery CDN -->
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"
   integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
@@ -27,7 +34,12 @@
   <!-- Compiled and minified JavaScript -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <!-- CUSTOM JS -->
-  <script src="8_HTTP-Library/http-class.js"></script>
-  <script src="8_HTTP-Library/app-class.js"></script>
+  <script src="2_game.js"></script>
+  <!-- JQuery Materialize INIT -->
+  <script>
+    $(document).ready(function(){
+      
+    });
+  </script>
 </body>
 </html>

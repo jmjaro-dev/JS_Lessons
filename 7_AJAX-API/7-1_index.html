@@ -11,14 +11,24 @@
   <!-- Font Awesome CDN -->
   <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
   
-  <title>Async Await</title>
+  <title>Chuck Norris Joke Generator</title>
 </head>
 <body>
   <div class="container">
-      <h1>Async Await</h1>
-      
-      <input type="number" id="input">
+    <h2>Chuck Norris Joke Generator</h2>
+    <form>
+      <div>
+        <label for="number">Number of Jokes</label>
+        <input type="number" id="number">
+      </div>
+      <div>
+        <button class="btn get-jokes">Get Jokes</button>
+      </div>
+    </form>
+    <br>
+    <div class="jokes"></div>
   </div>
+
   <!-- JQuery CDN -->
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"
   integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
@@ -26,8 +36,12 @@
   <!-- Compiled and minified JavaScript -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <!-- CUSTOM JS -->
-  <script src="11_Async-await/async-http.js"></script>
-  <script src="11_Async-await/async-app.js"></script>
-  <!-- <script src="11_Async-await/app.js"></script> -->
+  <script src="1_jokeapi.js"></script>
+  <!-- JQuery Materialize INIT -->
+  <script>
+    $(document).ready(function(){
+      
+    });
+  </script>
 </body>
 </html>
