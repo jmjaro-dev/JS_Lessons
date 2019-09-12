@@ -35,7 +35,7 @@ class UI {
     `;
   }
 
-  // show
+  // Show repositories
   showRepos(repos) {
     let output = '';
     
@@ -60,7 +60,7 @@ class UI {
 
   }
 
-  // showAlert()
+  // Show Alert
   showAlert(message, className) {
     this.clearAlert();
     // Create div element
